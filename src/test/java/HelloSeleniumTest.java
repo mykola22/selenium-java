@@ -1,4 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -7,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * More about that in the future lessons.
  */
 public class HelloSeleniumTest {
+    @Test
     public void FirstTest() {
         /**
          * Setting up chrome driver via WebDriver Manager and WebDriver
@@ -14,5 +16,7 @@ public class HelloSeleniumTest {
          */
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+        driver.get("https://www.saucedemo.com/");
+        driver.quit(); //quitting the driver to close the browser
     }
 }
